@@ -102,7 +102,7 @@ body {
   z-index: 100;
   border-bottom: 1px solid #333;
 } */
-.navbar {
+/* .navbar {
   background-color: transparent;
   border-bottom: 1px solid #FFD70033;
   padding: 10px 40px;
@@ -116,8 +116,98 @@ body {
   margin-left: 25px;
   font-weight: 500;
   transition: color 0.3s;
+} */
+/* =========== */
+/* ===== Navbar (desktop + responsive mobile) ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 4%;
+  background: rgba(5,10,25,0.88);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,215,0,0.06);
 }
 
+.navbar .logo {
+  color: #FFD700;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+/* Desktop nav */
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #f2f2f2;
+  text-decoration: none;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: color 0.18s, background 0.18s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #060b1b;
+  background: #FFD700;
+}
+
+/* Hamburger (hidden on desktop) */
+.hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #FFD700;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* ===== Mobile layout ===== */
+@media (max-width: 768px) {
+  /* hide desktop nav initially (we will toggle .show) */
+  .nav-links {
+    position: absolute;
+    top: 62px;
+    right: 12px;
+    width: 220px;
+    flex-direction: column;
+    align-items: flex-end;
+    background: rgba(5,10,25,0.98);
+    border: 1px solid rgba(255,215,0,0.06);
+    padding: 12px;
+    gap: 0.8rem;
+    border-radius: 8px;
+    transform-origin: top right;
+    transform: scaleY(0);
+    transition: transform 180ms ease, opacity 180ms ease;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  .nav-links.show {
+    transform: scaleY(1);
+    pointer-events: auto;
+    opacity: 1;
+  }
+
+  .nav-links a {
+    width: 100%;
+    text-align: right;
+    padding: 8px 10px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* ========== */
 .logo {
   font-family: "Lucida Handwriting", cursive;
   color: #FFD700;
@@ -133,10 +223,10 @@ body {
   transition: 0.3s;
 } */
 
-.navbar a:hover {
+/* .navbar a:hover {
   color: #FFD700;
   text-decoration: underline;
-}
+} */
 /* nav a:hover, nav a.active {
   color: #FFD700;
   text-decoration: underline;

@@ -11,11 +11,12 @@
 
     <header class="navbar">
         <div class="logo">✨ Siyara Lume</div>
-        <nav>
+        <nav class="nav-links" id="nav-links" role="navigation" aria-label="Main">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
           <a href="faq.html" class="active">FAQ</a>
         </nav>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">☰</button>  </header>
       </header>
       <style>
   body {
@@ -106,6 +107,34 @@
     </p>
     <p>© 2025 Siyara Lume | 3D Printed in India 🇮🇳</p>
   </footer>
-
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('nav-links');
+    
+      if (!hamburger || !navLinks) {
+        console.warn('Navbar init: missing elements', { hamburger, navLinks });
+        return;
+      }
+    
+      // debug helper — remove/comment out later if you want
+      // console.log('Navbar found, attaching click handler');
+    
+      hamburger.addEventListener('click', function(e) {
+        const isShown = navLinks.classList.toggle('show');
+        this.setAttribute('aria-expanded', isShown ? 'true' : 'false');
+      });
+    
+      // close menu on outside click (mobile)
+      document.addEventListener('click', function(e) {
+        if (!navLinks.classList.contains('show')) return;
+        const target = e.target;
+        if (!navLinks.contains(target) && target !== hamburger) {
+          navLinks.classList.remove('show');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+    </script>
 </body>
 </html>

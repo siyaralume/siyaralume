@@ -31,12 +31,12 @@
 
   <header class="navbar">
     <div class="logo">✨ Siyara Lume</a></div>
-    <nav>
+    <nav class="nav-links" id="nav-links" role="navigation" aria-label="Main">
       <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
       <a href="faq.html">FAQ</a>
     </nav>
-  </header>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">☰</button>  </header>
 
   <main>
     <section class="hero">
@@ -214,6 +214,60 @@
       dustContainer.appendChild(dust);
     }
   </script>
+<!-- <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    if (!hamburger || !navLinks) return; // defensive
+
+    hamburger.addEventListener('click', function() {
+      const expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', (!expanded).toString());
+      navLinks.classList.toggle('show');
+    });
+
+    // Optional: close menu when clicking outside on mobile
+    document.addEventListener('click', function(e) {
+      if (!navLinks.classList.contains('show')) return;
+      const target = e.target;
+      if (!navLinks.contains(target) && target !== hamburger) {
+        navLinks.classList.remove('show');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+</script> -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+  
+    if (!hamburger || !navLinks) {
+      console.warn('Navbar init: missing elements', { hamburger, navLinks });
+      return;
+    }
+  
+    // debug helper — remove/comment out later if you want
+    // console.log('Navbar found, attaching click handler');
+  
+    hamburger.addEventListener('click', function(e) {
+      const isShown = navLinks.classList.toggle('show');
+      this.setAttribute('aria-expanded', isShown ? 'true' : 'false');
+    });
+  
+    // close menu on outside click (mobile)
+    document.addEventListener('click', function(e) {
+      if (!navLinks.classList.contains('show')) return;
+      const target = e.target;
+      if (!navLinks.contains(target) && target !== hamburger) {
+        navLinks.classList.remove('show');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+  </script>
+  
   
 </body>
 </html>
