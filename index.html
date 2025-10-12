@@ -27,6 +27,8 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+  <div class="gold-dust"></div>
+
   <header class="navbar">
     <div class="logo">✨ Siyara Lume</a></div>
     <nav>
@@ -41,36 +43,87 @@
       <h1>🌟 The Light of Celebration 🌟</h1>
       <p>3D printed festive lamps & décor made with love and precision.<br>Your thoughts, Our Creation </p>
     </section>
-
+    <section class="brand-intro">
+      <h2>✨ Introducing Siyara Lume ✨</h2>
+      <p>
+        Your new stop for custom 3D-printed creations — where design meets purpose!<br>
+        <em>“Your Thoughts, Our Creation”</em>
+      </p>
+      <p>
+        With Diwali just around the corner, we’re taking pre-orders for beautifully designed 3D-printed diyas and decorative lights 🌸🪔
+      </p>
+      <p>
+        Each piece is <strong>sustainable</strong>, <strong>reusable ♻️</strong>, and crafted through technology — perfect for gifting or brightening your festive décor.
+      </p>
+    </section>
+    
     <section class="products">
       <h2>Our Creations</h2>
       <div class="product-grid">
-        <div class="product-card">
+        <!-- <div class="product-card">
           <img src="assets/imgs/classicdiya1.jpeg" alt="Classic Diya Lamp">
           <h3>Classic Diya Lamp</h3>
           <p>Traditional-style 3D printed diya, perfect for Diwali décor.</p>
           <p class="price">₹299 (Set of 4)</p>
+        </div> -->
+        <div class="product-card">
+          <div class="carousel" id="diya-carousel">
+            <img src="assets/imgs/classicdiya1.jpeg" alt="Classic Diya Lamp 1">
+            <img src="assets/imgs/classicdiyacolor1.jpeg" alt="Classic Diya Lamp 2">
+            <img src="assets/imgs/classsicdiyacolor2.jpeg" alt="Classic Diya Lamp 3">
+            <img src="assets/imgs/classicdiyacolor3.jpeg" class="active" alt="Classic Diya Lamp 3">
+            <div class="dots">
+              <span class="dot active" data-index="0"></span>
+              <span class="dot" data-index="1"></span>
+              <span class="dot" data-index="2"></span>
+              <span class="dot" data-index="3"></span>
+            </div>
+          </div>
+          <!-- <img src="assets/imgs/classicdiya1.jpeg" alt="Classic Diya Lamp"> -->
+          <h3>Classic Diya Lamp</h3>
+          <p>Traditional-style 3D printed diya, perfect for Diwali décor.</p>
+          <p class="price">
+            <span class="old-price">₹299</span>
+            <span class="new-price">₹199 (Set of 4)</span>
+            <span class="discount">(33% OFF)</span>
+          </p>
         </div>
-
+        
         <div class="product-card">
           <img src="assets/imgs/lithophane1.jpg " alt="LithoPhane">
           <h3>Personalized Lithophane</h3>
           <p>Personalized Tealight LithoPhane with your favourite memories</p>
-          <p class="price">₹499 (Tealight stand included)</p>
+          <p class="price">
+            <span class="old-price">₹499</span>
+            <span class="new-price">₹199 (Tealight stand included)</span>
+            <span class="discount">(60% OFF)</span>
+          </p>
+          <!-- <p class="price">₹499 (Tealight stand included)</p> -->
         </div>
         <div class="product-card">
           <img src="assets/imgs/geomatriclamp1.png" alt="Geomatric Lamp #1">
           <h3>Modern Geomatric Lamp #1</h3>
           <p>Modern3D printed lamp, perfect for Home décor.</p>
-          <p class="price">₹299 (Set of 2)</p>
+          <p class="price">
+            <span class="old-price">₹299</span>
+            <span class="new-price">₹199 (Set of 2)</span>
+            <span class="discount">(33% OFF)</span>
+          </p>
+          <!-- <p class="price">₹299 (Set of 2)</p> -->
         </div>
       </div>
+      <br>
       <div class="product-grid">
         <div class="product-card">
           <img src="assets/imgs/geomatriclamp2.png" alt="Geomatric Lamp #1">
           <h3>Modern Geomatric Lamp #2</h3>
           <p>Modern 3D printed lamp, perfect for Home décor.</p>
-          <p class="price">₹299 (Set of 2)</p>
+          <p class="price">
+            <span class="old-price">₹299</span>
+            <span class="new-price">₹199 (Set of 2)</span>
+            <span class="discount">(33% OFF)</span>
+          </p>
+          <!-- <p class="price">₹299 (Set of 2)</p> -->
         </div>
         <div class="product-card">
           <img src="assets/imgs/tealightstar.webp" alt="Lotus Tealight Holder">
@@ -79,10 +132,27 @@
           <p class="price">₹249 (Set of 2)</p>
         </div>
         <div class="product-card">
-          <img src="assets/imgs/classicdiya1.jpeg" alt="Classic Diya Lamp">
+          <div class="carousel" id="diya-carousel">
+            <img src="assets/imgs/classicdiya1.jpeg" class="active" alt="Classic Diya Lamp 1">
+            <img src="assets/imgs/classicdiyacolor1.jpeg" alt="Classic Diya Lamp 2">
+            <img src="assets/imgs/classsicdiyacolor2.jpeg" alt="Classic Diya Lamp 3">
+            <img src="assets/imgs/classicdiyacolor3.jpeg" alt="Classic Diya Lamp 3">
+            <div class="dots">
+              <span class="dot active" data-index="0"></span>
+              <span class="dot" data-index="1"></span>
+              <span class="dot" data-index="2"></span>
+              <span class="dot" data-index="3"></span>
+            </div>
+          </div>
+          <!-- <img src="assets/imgs/classicdiya1.jpeg" alt="Classic Diya Lamp"> -->
           <h3>Classic Diya Lamp</h3>
           <p>Traditional-style 3D printed diya, perfect for Diwali décor.</p>
-          <p class="price">₹499 (Set of 8)</p>
+          <p class="price">
+            <span class="old-price">₹499</span>
+            <span class="new-price">₹379 (Set of 8)</span>
+            <span class="discount">(25% OFF)</span>
+          </p>
+          <!-- <p class="price">₹499 (Set of 8)</p> -->
         </div>
         </div>
     </section>
@@ -100,5 +170,50 @@
       <!-- |  WhatsApp 📞 (+91 XXXXXXXXXX)</p> --> 
     <p>© 2025 Siyara Lume | 3D Printed in India 🇮🇳</p>
   </footer>
+  <script>
+    document.querySelectorAll('.carousel').forEach((carousel) => {
+      const images = carousel.querySelectorAll('img');
+      const dots = carousel.querySelectorAll('.dot');
+      let currentIndex = 0;
+  
+      function showSlide(index) {
+        images.forEach((img, i) => img.classList.toggle('active', i === index));
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+      }
+  
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          currentIndex = parseInt(dot.dataset.index);
+          showSlide(currentIndex);
+        });
+      });
+  
+      // Auto-slide every 3 seconds
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        showSlide(currentIndex);
+      }, 3000);
+    });
+  </script>
+  <script>
+    const dustContainer = document.querySelector('.gold-dust');
+  
+    for (let i = 0; i < 50; i++) {
+      const dust = document.createElement('span');
+      const size = Math.random() * 4 + 2; // 2px to 6px
+      const left = Math.random() * 100; // percentage
+      const duration = Math.random() * 5 + 5; // 5 to 10s
+      const delay = Math.random() * 5; // random start delay
+  
+      dust.style.width = `${size}px`;
+      dust.style.height = `${size}px`;
+      dust.style.left = `${left}%`;
+      dust.style.animationDuration = `${duration}s`;
+      dust.style.animationDelay = `${delay}s`;
+  
+      dustContainer.appendChild(dust);
+    }
+  </script>
+  
 </body>
 </html>

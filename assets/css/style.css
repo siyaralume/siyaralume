@@ -1,15 +1,97 @@
 /* === Siyara Lume – Black & Gold Store Theme === */
 
-body {
+/* body {
   background-color: #000;
   color: #EAEAEA;
   font-family: "Poppins", "Georgia", serif;
   margin: 0;
   padding: 0;
+} */
+/* body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #0e1730 0%, #060b1b 100%);
+  color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+} */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  /* background: linear-gradient(180deg, #020617 0%, #060b1b 100%); */
+  /* color: #f2f2f2; */
+  background: radial-gradient(circle at top, #0a0f1f, #050912 80%);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
+}
+/* --- Gold Dust Snowfall --- */
+.gold-dust {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.gold-dust span {
+  position: absolute;
+  top: -10px;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #ffeb99, #d4af37);
+  border-radius: 50%;
+  opacity: 0.9;
+  animation: fall linear infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) translateX(15px);
+    opacity: 0;
+  }
+}
+
+/* Optional: Dark, elegant background */
+body {
+  background: radial-gradient(circle at top, #0a0f1f, #050912 80%);
+  color: #fff;
+}
+
+
+.price {
+  margin-top: 10px;
+  font-size: 1.1em;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  margin-right: 8px;
+}
+
+.new-price {
+  color: #FFD700; /* gold */
+  font-weight: bold;
+}
+
+.discount {
+  color: #FF6347; /* tomato red for contrast */
+  font-size: 0.9em;
+  margin-left: 6px;
 }
 
 /* NAVBAR */
-.navbar {
+/* .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,6 +101,21 @@ body {
   top: 0;
   z-index: 100;
   border-bottom: 1px solid #333;
+} */
+.navbar {
+  background-color: transparent;
+  border-bottom: 1px solid #FFD70033;
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar a {
+  color: #FFD700;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
 .logo {
@@ -28,18 +125,22 @@ body {
   letter-spacing: 1px;
 }
 
-nav a {
+/* nav a {
   color: #FFB347;
   margin-left: 1.5rem;
   text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
-}
+} */
 
-nav a:hover, nav a.active {
+.navbar a:hover {
   color: #FFD700;
   text-decoration: underline;
 }
+/* nav a:hover, nav a.active {
+  color: #FFD700;
+  text-decoration: underline;
+} */
 
 /* HERO */
 .hero {
@@ -92,18 +193,31 @@ nav a:hover, nav a.active {
   margin: 0 auto;
 }
 
-.product-card {
+/* .product-card {
   background: #111;
   border: 1px solid #333;
   border-radius: 10px;
   padding: 1rem;
   transition: transform 0.3s;
+} */
+.product-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid #FFD70033;
+  border-radius: 12px;
+  padding: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.product-card:hover {
+/* .product-card:hover {
   transform: translateY(-6px);
   border-color: #FFD700;
+} */
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #FFD70033;
 }
+
+
 
 .product-card img {
   width: 100%;
@@ -174,3 +288,77 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
+
+/* =================== */
+.brand-intro {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 12px;
+  max-width: 800px;
+  border: 1px solid #222;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.05);
+}
+
+.brand-intro h2 {
+  color: #FFD700;
+  margin-bottom: 0.5rem;
+}
+
+.brand-intro p {
+  color: #dcdcdc;
+  line-height: 1.6;
+  margin: 0.5rem 0;
+}
+
+.brand-intro em {
+  color: #FFB347;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.carousel img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: none;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel img.active {
+  display: block;
+  opacity: 1;
+}
+
+.carousel .dots {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+}
+
+.carousel .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #777;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.carousel .dot.active {
+  background: #FFD700;
+}
+
+
+/* =================== */
